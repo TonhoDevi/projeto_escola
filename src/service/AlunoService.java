@@ -15,11 +15,19 @@ public class AlunoService {
     }
 
     public List<Aluno> listar(){
-        return
+        List<Aluno> alunos = repository.cadastros;
+        return alunos;
     }
 
-    public boolean remove(String nome){
-        return repository.
+    public boolean remove(int ID){
+        for (Aluno aluno : repository.cadastros) {
+            if (aluno.getId() == ID) {
+                repository.cadastros.remove(aluno);
+                return true;
+            }
+        }   
+        
+        return false; 
     }
 
 
